@@ -228,6 +228,9 @@ object Settings : SharedPreferences.OnSharedPreferenceChangeListener {
         get() = preferences.getBoolean("pref_use_secondary_servers", false)
         set(value) = edit { putBoolean("pref_use_secondary_servers", value) }
 
+    val useCringeScore: Boolean
+        get() = preferences.getBoolean("pref_use_cringe_score", true)
+
     fun resetContentTypeSettings() {
         // reset settings.
         edit {

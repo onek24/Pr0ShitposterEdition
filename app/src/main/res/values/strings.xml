@@ -622,5 +622,8 @@
     <string name="pref_video_quality_values_title">Video quality</string>
     <string name="action_feed_type_junk">Junk</string>
     <string name="pref_show_category_junk_title">Category \'Junk\'</string>
+
+    <string name="pref_use_cringe_as_benis">Use cringe instead of benis</string>
+    <string name="pref_use_cringe_as_benis_title">Cringe points</string>
 </resources>
 

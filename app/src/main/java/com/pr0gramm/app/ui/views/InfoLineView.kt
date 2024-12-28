@@ -28,6 +28,7 @@ import com.pr0gramm.app.util.*
 import com.pr0gramm.app.util.di.injector
 import java.text.DateFormat
 import kotlin.math.min
+import kotlin.math.abs
 
 
 /**
@@ -174,7 +175,13 @@ class InfoLineView(context: Context) : LinearLayout(context), InjectorViewMixin 
         val feedItem = this.feedItem ?: return null
 
         return if (scoreIsVisible()) {
-            val rating = feedItem.up - feedItem.down + min(1, vote.voteValue)
+            var rating = 0
+            if ( Settings.useCringeScore ) {
+                rating = feedItem.up + abs(feedItem.down) + min(1, vote.voteValue)
+            }
+            else{
+                rating = feedItem.up - feedItem.down + min(1, vote.voteValue)
+            }
             rating.toString()
         } else {
             null
@@ -215,7 +222,12 @@ class InfoLineView(context: Context) : LinearLayout(context), InjectorViewMixin 
 
             buildString {
                 if (score != null) {
-                    append("$score Benis · ")
+                    if ( Settings.useCringeScore ) {
+                        append("$score Cringe · ")
+                    }
+                    else {
+                        append("$score Benis · ")
+                    }
                 }
 
                 append(date)
