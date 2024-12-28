@@ -604,4 +604,6 @@
     <string name="pref_feed_hide_junk_in_new_summary">Deaktiviere diese Option um \'Müll\' auch in \'Neu\' anzuzeigen.</string>
     <string name="pref_use_cringe_as_benis">\'Cringe\' anstelle von \'Benis\'</string>
     <string name="pref_use_cringe_as_benis_title">Cringe Punkte</string>
+    <string name="cringe_one">%d Cringe</string>
+    <string name="cringe_more">%d Cringe</string>
 </resources>

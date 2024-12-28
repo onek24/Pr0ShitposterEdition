@@ -11,6 +11,7 @@ import androidx.core.view.isVisible
 import com.google.android.material.snackbar.Snackbar
 import com.pr0gramm.app.Instant
 import com.pr0gramm.app.R
+import com.pr0gramm.app.Settings
 import com.pr0gramm.app.ui.configureNewStyle
 import com.pr0gramm.app.util.*
 import java.text.DateFormat
@@ -52,11 +53,21 @@ class SenderInfoView @JvmOverloads constructor(context: Context, attrs: Attribut
     }
 
     fun setPoints(commentScore: CommentScore) {
-        setPoints(commentScore.score, commentScore)
+        val score = if ( Settings.useCringeScore ) {
+            commentScore.cringe
+        }
+        else {
+            commentScore.score
+        }
+        setPoints(score, commentScore)
     }
 
     private fun setPoints(points: Int, score: CommentScore?) {
-        val id = if (points == 1) R.string.points_one else R.string.points_more
+        val id = if ( Settings.useCringeScore ) {
+            if (points == 1) R.string.cringe_one else R.string.cringe_more
+        } else {
+            if (points == 1) R.string.points_one else R.string.points_more
+        }
         this.pointsText = context.getString(id, points)
         this.score = score
     }

@@ -625,5 +625,7 @@
 
     <string name="pref_use_cringe_as_benis">Use cringe instead of benis</string>
     <string name="pref_use_cringe_as_benis_title">Cringe points</string>
+    <string name="cringe_one">%d cringe</string>
+    <string name="cringe_more">%d cringe</string>
 </resources>
 
